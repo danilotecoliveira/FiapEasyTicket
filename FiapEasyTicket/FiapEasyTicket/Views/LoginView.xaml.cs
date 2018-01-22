@@ -1,9 +1,8 @@
-﻿using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using System;
+using Xamarin.Forms;
 
 namespace FiapEasyTicket.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginView : ContentPage
     {
         public LoginView()

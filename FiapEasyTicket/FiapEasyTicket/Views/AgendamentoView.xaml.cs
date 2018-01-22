@@ -5,7 +5,6 @@ using System;
 
 namespace FiapEasyTicket.Views
 {
-    //[XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AgendamentoView : ContentPage
     {
         public AgendamentoViewModel ViewModel { get; set; }

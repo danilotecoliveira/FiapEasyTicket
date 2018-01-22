@@ -43,9 +43,6 @@
     <Compile Include="Data\AgendamentoDAO.cs" />
     <Compile Include="Data\ISQLite.cs" />
     <Compile Include="LoginService.cs" />
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Media\ICamera.cs" />
     <Compile Include="Models\Agendamento.cs" />
     <Compile Include="Models\ListagemVeiculos.cs" />
@@ -83,10 +80,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MainPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="App.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

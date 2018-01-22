@@ -5,7 +5,6 @@ using Xamarin.Forms.Xaml;
 
 namespace FiapEasyTicket.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AgendamentosUsuarioView : ContentPage
     {
         readonly AgendamentosUsuarioViewModel _viewModel;

@@ -3,12 +3,12 @@
     public class Login
     {
         public string Email { get; private set; }
-        public string Senha { get; private set; }
+        public string Password { get; private set; }
 
-        public Login(string email, string senha)
+        public Login(string email, string password)
         {
             Email = email;
-            Senha = senha;
+            Password = password;
         }
     }
 }

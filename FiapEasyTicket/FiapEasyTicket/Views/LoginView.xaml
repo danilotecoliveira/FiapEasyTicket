@@ -10,9 +10,9 @@
     
     <StackLayout VerticalOptions="Center" Margin="64">
         <!--<Image Source="aluracar.png"></Image>-->
-        <Entry Placeholder="Usuário" Text="{Binding Usuario}" Keyboard="Email"></Entry>
-        <Entry Placeholder="Senha" IsPassword="True" Text="{Binding Senha}"></Entry>
-        <Button Text="Entrar" Command="{Binding EntrarCommand}"></Button>
+        <Entry Placeholder="Usuário" Text="{Binding Email}" Keyboard="Email"></Entry>
+        <Entry Placeholder="Senha" IsPassword="True" Text="{Binding Password}"></Entry>
+        <Button Text="Entrar" Command="{Binding LoginCommand}"></Button>
     </StackLayout>
     
 </ContentPage>

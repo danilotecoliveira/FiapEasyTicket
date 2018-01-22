@@ -6,38 +6,38 @@ namespace FiapEasyTicket.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {
-        private string usuario = "joao@alura.com.br";
-        public string Usuario
+        private string email = "joao@alura.com.br";
+        public string Email
         {
-            get { return usuario; }
+            get { return email; }
             set {
-                usuario = value;
-                ((Command)EntrarCommand).ChangeCanExecute();
+                email = value;
+                ((Command)LoginCommand).ChangeCanExecute();
             }
         }
 
-        private string senha = "alura123";
-        public string Senha
+        private string password = "alura123";
+        public string Password
         {
-            get { return senha; }
+            get { return password; }
             set {
-                senha = value;
-                ((Command)EntrarCommand).ChangeCanExecute();
+                password = value;
+                ((Command)LoginCommand).ChangeCanExecute();
             }
         }
 
-        public ICommand EntrarCommand { get; private set; }
+        public ICommand LoginCommand { get; private set; }
 
         public LoginViewModel()
         {
-            EntrarCommand = new Command( async () =>
+            LoginCommand = new Command( async () =>
             {
                 var loginService = new LoginService();
-                await loginService.FazerLogin(new Login(usuario, senha));
+                await loginService.Login(new Login(email, password));
             },
                 () => 
                 {
-                    return (!string.IsNullOrWhiteSpace(usuario) && !string.IsNullOrWhiteSpace(senha));
+                    return (!string.IsNullOrWhiteSpace(email) && !string.IsNullOrWhiteSpace(password));
                 }
             );
         }
