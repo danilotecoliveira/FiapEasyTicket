@@ -1,11 +1,11 @@
 ﻿using Xamarin.Forms;
 using System.Net.Http;
 using Newtonsoft.Json;
-using TestDrive.Models;
+using FiapEasyTicket.Models;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 
-namespace TestDrive.ViewModels
+namespace FiapEasyTicket.ViewModels
 {
     public class ListagemViewModel : BaseViewModel
     {

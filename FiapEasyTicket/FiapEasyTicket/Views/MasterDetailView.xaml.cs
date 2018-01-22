@@ -1,7 +1,7 @@
-﻿using TestDrive.Models;
+﻿using FiapEasyTicket.Models;
 using Xamarin.Forms;
 
-namespace TestDrive.Views
+namespace FiapEasyTicket.Views
 {
     public partial class MasterDetailView : MasterDetailPage
     {

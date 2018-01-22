@@ -1,9 +1,9 @@
 ﻿using SQLite;
 using System.Collections.Generic;
 using System.Linq;
-using TestDrive.Models;
+using FiapEasyTicket.Models;
 
-namespace TestDrive.Data
+namespace FiapEasyTicket.Data
 {
     public class AgendamentoDAO
     {

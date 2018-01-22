@@ -1,9 +1,9 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using TestDrive.ViewModels;
-using TestDrive.Models;
+using FiapEasyTicket.ViewModels;
+using FiapEasyTicket.Models;
 
-namespace TestDrive.Views
+namespace FiapEasyTicket.Views
 {
 	//[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MasterView : TabbedPage

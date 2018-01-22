@@ -1,12 +1,12 @@
 ﻿using System;
 using Xamarin.Forms;
 using System.Net.Http;
-using TestDrive.Models;
+using FiapEasyTicket.Models;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace TestDrive
+namespace FiapEasyTicket
 {
     public class LoginService
     {
@@ -30,17 +30,17 @@ namespace TestDrive
                 }
                 catch
                 {
-                    MessagingCenter.Send(new LoginException("Sem conexão"), "FalhaLogin");
+                    MessagingCenter.Send(new LoginException("Sem conexão"), "login-failed");
                 }
 
                 if (resultado.IsSuccessStatusCode)
                 {
                     var conteudo = await resultado.Content.ReadAsStringAsync();
                     var resultadoLogin = JsonConvert.DeserializeObject<ResultadoLogin>(conteudo);
-                    MessagingCenter.Send(resultadoLogin.Usuario, "SucessoLogin");
+                    MessagingCenter.Send(resultadoLogin.Usuario, "login-success");
                 }
                 else
-                    MessagingCenter.Send(new LoginException("Credencial incorreta"), "FalhaLogin");
+                    MessagingCenter.Send(new LoginException("Credencial incorreta"), "login-failed");
             }
         }
     }

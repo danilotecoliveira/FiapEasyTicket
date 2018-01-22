@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace TestDrive.Models
+namespace FiapEasyTicket.Models
 {
     public class ListagemVeiculos
     {

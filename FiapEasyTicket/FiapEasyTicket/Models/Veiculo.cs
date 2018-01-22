@@ -1,4 +1,4 @@
-﻿namespace TestDrive.Models
+﻿namespace FiapEasyTicket.Models
 {
     public class Veiculo
     {

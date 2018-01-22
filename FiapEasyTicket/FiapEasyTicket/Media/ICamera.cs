@@ -1,4 +1,4 @@
-﻿namespace TestDrive.Media
+﻿namespace FiapEasyTicket.Media
 {
     public interface ICamera
     {

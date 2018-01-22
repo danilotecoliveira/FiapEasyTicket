@@ -1,8 +1,8 @@
 ﻿using Xamarin.Forms;
-using TestDrive.Models;
-using TestDrive.ViewModels;
+using FiapEasyTicket.Models;
+using FiapEasyTicket.ViewModels;
 
-namespace TestDrive.Views
+namespace FiapEasyTicket.Views
 {
     //[XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DetalheView : ContentPage

@@ -1,8 +1,8 @@
-﻿using TestDrive.Models;
-using TestDrive.Views;
+﻿using FiapEasyTicket.Models;
+using FiapEasyTicket.Views;
 using Xamarin.Forms;
 
-namespace TestDrive
+namespace FiapEasyTicket
 {
     public partial class App : Application
     {
@@ -15,7 +15,7 @@ namespace TestDrive
 
         protected override void OnStart()
         {
-            MessagingCenter.Subscribe<Usuario>(this, "SucessoLogin", (usuario) => 
+            MessagingCenter.Subscribe<Usuario>(this, "login-success", (usuario) => 
             {
                 //MainPage = new NavigationPage(new ListagemView());
                 MainPage = new MasterDetailView(usuario);

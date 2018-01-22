@@ -1,8 +1,8 @@
 ﻿using Xamarin.Forms;
-using TestDrive.Models;
+using FiapEasyTicket.Models;
 using System.Windows.Input;
 
-namespace TestDrive.ViewModels
+namespace FiapEasyTicket.ViewModels
 {
     public class DetalheViewModel : BaseViewModel
     {

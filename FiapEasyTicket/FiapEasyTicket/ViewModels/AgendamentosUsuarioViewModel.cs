@@ -1,10 +1,10 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
-using TestDrive.Data;
-using TestDrive.Models;
+using FiapEasyTicket.Data;
+using FiapEasyTicket.Models;
 using Xamarin.Forms;
 
-namespace TestDrive.ViewModels
+namespace FiapEasyTicket.ViewModels
 {
     public class AgendamentosUsuarioViewModel : BaseViewModel
     {

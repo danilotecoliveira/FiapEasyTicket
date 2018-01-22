@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace TestDrive.ViewModels
+namespace FiapEasyTicket.ViewModels
 {
     public abstract class BaseViewModel : INotifyPropertyChanged
     {

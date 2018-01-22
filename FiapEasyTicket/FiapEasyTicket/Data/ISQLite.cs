@@ -1,6 +1,6 @@
 ﻿using SQLite;
 
-namespace TestDrive.Data
+namespace FiapEasyTicket.Data
 {
     public interface ISQLite
     {

@@ -1,14 +1,14 @@
 ﻿using Android.OS;
 using Android.App;
 using Xamarin.Forms;
-using TestDrive.Droid;
+using FiapEasyTicket.Droid;
 using Android.Content;
-using TestDrive.Media;
+using FiapEasyTicket.Media;
 using Android.Provider;
 using Android.Content.PM;
 
 [assembly: Dependency(typeof(MainActivity))]
-namespace TestDrive.Droid
+namespace FiapEasyTicket.Droid
 {
     [Activity(Label = "TestDrive", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity, ICamera

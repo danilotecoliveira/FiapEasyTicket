@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace TestDrive.Models
+namespace FiapEasyTicket.Models
 {
     //[JsonObject("usuario")]
     public class Usuario

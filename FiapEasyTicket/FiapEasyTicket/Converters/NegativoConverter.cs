@@ -2,7 +2,7 @@
 using System.Globalization;
 using Xamarin.Forms;
 
-namespace TestDrive.Converters
+namespace FiapEasyTicket.Converters
 {
     public class NegativoConverter : IValueConverter
     {

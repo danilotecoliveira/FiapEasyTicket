@@ -1,8 +1,8 @@
-﻿using TestDrive.Models;
-using TestDrive.ViewModels;
+﻿using FiapEasyTicket.Models;
+using FiapEasyTicket.ViewModels;
 using Xamarin.Forms;
 
-namespace TestDrive.Views
+namespace FiapEasyTicket.Views
 {
     public partial class ListagemView : ContentPage
     {

@@ -1,10 +1,10 @@
 ﻿using Xamarin.Forms;
-using TestDrive.Media;
-using TestDrive.Models;
+using FiapEasyTicket.Media;
+using FiapEasyTicket.Models;
 using System.Windows.Input;
 using System.IO;
 
-namespace TestDrive.ViewModels
+namespace FiapEasyTicket.ViewModels
 {
     public class MasterViewModel : BaseViewModel
     {

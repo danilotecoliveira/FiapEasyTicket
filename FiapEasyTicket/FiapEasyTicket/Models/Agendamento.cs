@@ -1,7 +1,7 @@
 ﻿using SQLite;
 using System;
 
-namespace TestDrive.Models
+namespace FiapEasyTicket.Models
 {
     public class Agendamento
     {

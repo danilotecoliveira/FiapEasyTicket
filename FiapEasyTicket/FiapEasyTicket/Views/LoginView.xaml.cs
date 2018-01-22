@@ -1,7 +1,7 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace TestDrive.Views
+namespace FiapEasyTicket.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginView : ContentPage
@@ -15,7 +15,7 @@ namespace TestDrive.Views
         {
             base.OnAppearing();
 
-            MessagingCenter.Subscribe<LoginException>(this, "FalhaLogin", async (ex) =>
+            MessagingCenter.Subscribe<LoginException>(this, "login-failed", async (ex) =>
             {
                 await DisplayAlert("Login", ex.Message, "Ok");
             });

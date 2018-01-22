@@ -1,14 +1,14 @@
 ﻿using System;
 using Xamarin.Forms;
-using TestDrive.Models;
+using FiapEasyTicket.Models;
 using System.Windows.Input;
 using System.Net.Http;
 using System.Text;
 using Newtonsoft.Json;
-using TestDrive.Data;
+using FiapEasyTicket.Data;
 using System.Threading.Tasks;
 
-namespace TestDrive.ViewModels
+namespace FiapEasyTicket.ViewModels
 {
     public class AgendamentoViewModel : BaseViewModel
     {

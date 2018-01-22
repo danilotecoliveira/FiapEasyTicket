@@ -1,9 +1,9 @@
-﻿using TestDrive.Models;
-using TestDrive.ViewModels;
+﻿using FiapEasyTicket.Models;
+using FiapEasyTicket.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace TestDrive.Views
+namespace FiapEasyTicket.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AgendamentosUsuarioView : ContentPage
