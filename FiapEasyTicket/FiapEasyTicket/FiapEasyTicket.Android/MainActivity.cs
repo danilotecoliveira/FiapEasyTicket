@@ -5,12 +5,13 @@ using Android.Content;
 using Android.Provider;
 using Android.Content.PM;
 using FiapEasyTicket.Droid;
+using FiapEasyTicket.Media;
 
 [assembly: Dependency(typeof(MainActivity))]
 namespace FiapEasyTicket.Droid
 {
     [Activity(Label = "FiapEasyTicket", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity, ICamera
     {
         static Java.IO.File foto;
 
