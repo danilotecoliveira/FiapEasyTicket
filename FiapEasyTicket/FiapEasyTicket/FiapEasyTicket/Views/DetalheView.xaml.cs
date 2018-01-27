@@ -11,21 +11,21 @@ namespace FiapEasyTicket.Views
         public Filme Filme { get; set; }
         public Usuario Usuario { get; set; }
 
-        public DetalheView(Filme veiculo, Usuario usuario)
+        public DetalheView(Filme filme, Usuario usuario)
         {
             InitializeComponent();
-            Filme = veiculo;
+            Filme = filme;
             Usuario = usuario;
-            BindingContext = new DetalheViewModel(veiculo);
+            BindingContext = new DetalheViewModel(filme);
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            MessagingCenter.Subscribe<Filme>(this, "Proximo", (veiculo) =>
+            MessagingCenter.Subscribe<Filme>(this, "Proximo", (filme) =>
             {
-                Navigation.PushAsync(new ReservaView(veiculo, Usuario));
+                Navigation.PushAsync(new ReservaView(filme, Usuario));
             });
         }
 

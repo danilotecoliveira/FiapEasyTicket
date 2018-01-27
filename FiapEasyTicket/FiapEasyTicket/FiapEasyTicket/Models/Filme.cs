@@ -2,9 +2,9 @@
 {
     public class Filme
     {
-        public const int _freioABS = 800;
-        public const int _arCondicionado = 1000;
-        public const int _mp3 = 500;
+        public const int _PIPOCA = 20;
+        public const int _CHOCOLATE = 10;
+        public const int _REFRIGERANTE = 10;
 
         public string Cartaz { get; set; }
         public string Titulo { get; set; }
@@ -14,9 +14,9 @@
             get { return string.Format("R$ {0}", Preco); }
         }
 
-        public bool TemFreioAbs { get; set; }
-        public bool TemArCondicionado { get; set; }
-        public bool TemMP3Player { get; set; }
+        public bool TemPipoca { get; set; }
+        public bool TemChocolate { get; set; }
+        public bool TemRefrigerante { get; set; }
 
         public string PrecoTotalFormatado
         {
@@ -24,9 +24,9 @@
             {
                 return string.Format("Valor total: R$ {0}",
                     Preco +
-                    ((TemFreioAbs) ? _freioABS : 0) +
-                    ((TemArCondicionado) ? _arCondicionado : 0) +
-                    ((TemMP3Player) ? _mp3 : 0));
+                    ((TemPipoca) ? _PIPOCA : 0) +
+                    ((TemChocolate) ? _CHOCOLATE : 0) +
+                    ((TemRefrigerante) ? _REFRIGERANTE : 0));
             }
         }
     }

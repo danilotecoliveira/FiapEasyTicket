@@ -9,67 +9,67 @@ namespace FiapEasyTicket.ViewModels
         public Filme Filme { get; set; }
         public ICommand ProximoComando { get; set; }
 
-        public string FreioABS
+        public string Pipoca
         {
             get
             {
-                return string.Format("Freio ABS - R$ {0}", Filme._freioABS);
+                return string.Format("Pipoca - R$ {0}", Filme._PIPOCA);
             }
         }
 
-        public string ArCondicionado
+        public string Chocolate
         {
             get
             {
-                return string.Format("Ar condicionado - R$ {0}", Filme._arCondicionado);
+                return string.Format("Chocolate - R$ {0}", Filme._CHOCOLATE);
             }
         }
 
-        public string MP3Player
+        public string Refrigerante
         {
             get
             {
-                return string.Format("Mp3 Player - R$ {0}", Filme._mp3);
+                return string.Format("Refrigerante - R$ {0}", Filme._REFRIGERANTE);
             }
         }
 
-        public bool TemFreioABS
+        public bool TemPipoca
         {
             get
             {
-                return Filme.TemFreioAbs;
+                return Filme.TemPipoca;
             }
             set
             {
-                Filme.TemFreioAbs = value;
+                Filme.TemPipoca = value;
                 OnPropertyChanged();
                 OnPropertyChanged(nameof(ValorTotal));
             }
         }
 
-        public bool TemArCondicionado
+        public bool TemChocolate
         {
             get
             {
-                return Filme.TemArCondicionado;
+                return Filme.TemChocolate;
             }
             set
             {
-                Filme.TemArCondicionado = value;
+                Filme.TemChocolate = value;
                 OnPropertyChanged();
                 OnPropertyChanged(nameof(ValorTotal));
             }
         }
 
-        public bool TemMP3Player
+        public bool TemRefrigerante
         {
             get
             {
-                return Filme.TemMP3Player;
+                return Filme.TemRefrigerante;
             }
             set
             {
-                Filme.TemMP3Player = value;
+                Filme.TemRefrigerante = value;
                 OnPropertyChanged();
                 OnPropertyChanged(nameof(ValorTotal));
             }
@@ -83,12 +83,12 @@ namespace FiapEasyTicket.ViewModels
             }
         }
 
-        public DetalheViewModel(Filme veiculo)
+        public DetalheViewModel(Filme filme)
         {
-            Filme = veiculo;
+            Filme = filme;
             ProximoComando = new Command(() =>
             {
-                MessagingCenter.Send(veiculo, "Proximo");
+                MessagingCenter.Send(filme, "Proximo");
             });
         }
     }

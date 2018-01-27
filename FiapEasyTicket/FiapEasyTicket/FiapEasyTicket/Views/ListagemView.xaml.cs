@@ -23,9 +23,9 @@ namespace FiapEasyTicket.Views
         {
             base.OnAppearing();
             MessagingCenter.Subscribe<Filme>(this, "FilmeSelecionado",
-                (veiculo) =>
+                (filme) =>
                 {
-                    Navigation.PushAsync(new DetalheView(veiculo, Usuario));
+                    Navigation.PushAsync(new DetalheView(filme, Usuario));
                 }
             );
 

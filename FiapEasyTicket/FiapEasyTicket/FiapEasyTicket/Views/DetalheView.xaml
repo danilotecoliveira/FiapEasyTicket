@@ -1,15 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FiapEasyTicket.Views.DetalheView">
+             x:Class="FiapEasyTicket.Views.DetalheView"
+             Title="{Binding Filme.Titulo}">
     <ContentPage.Content>
         <StackLayout Padding="25">
             <TableView Intent="Settings">
                 <TableRoot>
-                    <TableSection Title="Acessórios">
-                        <SwitchCell Text="{Binding FreioABS}" On="{Binding TemFreioABS, Mode=TwoWay}"></SwitchCell>
-                        <SwitchCell Text="{Binding ArCondicionado}" On="{Binding TemArCondicionado, Mode=TwoWay}"></SwitchCell>
-                        <SwitchCell Text="{Binding MP3Player}" On="{Binding TemMP3Player, Mode=TwoWay}"></SwitchCell>
+                    <TableSection Title="Acompanhamentos">
+                        <SwitchCell Text="{Binding Pipoca}" On="{Binding TemPipoca, Mode=TwoWay}"></SwitchCell>
+                        <SwitchCell Text="{Binding Chocolate}" On="{Binding TemChocolate, Mode=TwoWay}"></SwitchCell>
+                        <SwitchCell Text="{Binding Refrigerante}" On="{Binding TemRefrigerante, Mode=TwoWay}"></SwitchCell>
                         <TextCell Text="{Binding ValorTotal, Mode=TwoWay}"></TextCell>
                     </TableSection>
                 </TableRoot>
