@@ -3,7 +3,7 @@ using System;
 
 namespace FiapEasyTicket.Models
 {
-    public class Agendamento
+    public class Reserva
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
@@ -36,14 +36,14 @@ namespace FiapEasyTicket.Models
 
         public TimeSpan HoraAgendamento { get; set; }
 
-        public Agendamento(string nome, string fone, string email, string modelo, decimal preco, DateTime dataAgendamento, TimeSpan horaAgendamento)
+        public Reserva(string nome, string fone, string email, string modelo, decimal preco, DateTime dataAgendamento, TimeSpan horaAgendamento)
             : this(nome, fone, email, modelo, preco)
         {
             DataAgendamento = DataAgendamento;
             HoraAgendamento = HoraAgendamento;
         }
 
-        public Agendamento(string nome, string fone, string email, string modelo, decimal preco)
+        public Reserva(string nome, string fone, string email, string modelo, decimal preco)
         {
             Nome = nome;
             Fone = fone;
@@ -52,6 +52,6 @@ namespace FiapEasyTicket.Models
             Preco = preco;
         }
 
-        public Agendamento() { }
+        public Reserva() { }
     }
 }
