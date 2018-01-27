@@ -14,7 +14,7 @@ namespace FiapEasyTicket.ViewModels
 
         public ReservaViewModel(Filme filme, Usuario usuario)
         {
-            Reserva = new Reserva(usuario.Nome, usuario.Email, filme.Preco);
+            Reserva = new Reserva(usuario.Nome, usuario.Email, filme.PrecoTotalFormatado, filme.Titulo);
             ComandoAgendar = new Command(() =>
             {
                 MessagingCenter.Send(Reserva, "Reserva");
@@ -33,7 +33,7 @@ namespace FiapEasyTicket.ViewModels
             set { Reserva.Nome = value; }
         }
 
-        public decimal Preco
+        public string Preco
         {
             get { return Reserva.Preco; }
             set { Reserva.Preco = value; }
@@ -79,7 +79,7 @@ namespace FiapEasyTicket.ViewModels
             }
         }
 
-        public TimeSpan HoraReserva
+        public string HoraReserva
         {
             get
             {
@@ -91,19 +91,19 @@ namespace FiapEasyTicket.ViewModels
             }
         }
 
-        public async void SalvarReserva()
+        public void SalvarReserva()
         {
             ReservaService servico = new ReservaService();
-            await servico.EnviarReserva(Reserva);
+            servico.EnviarReserva(Reserva);
         }
     }
 
     public class ReservaService
     {
-        public async Task EnviarReserva(Reserva reserva)
+        public void EnviarReserva(Reserva reserva)
         {
-            SalvarReservaDB(reserva);
             reserva.Confirmado = true;
+            SalvarReservaDB(reserva);
 
             if (reserva.Confirmado)
                 MessagingCenter.Send(reserva, "SucessoReserva");

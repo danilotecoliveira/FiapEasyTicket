@@ -26,7 +26,7 @@
 
                     <Button Text="Perfil" Command="{Binding EditarPerfilCommand}"></Button>
                     <Button Text="Minhas Reservas" Command="{Binding MinhasReservasCommand}"></Button>
-                    <Button Text="Novo Reserva" Command="{Binding NovoReservaCommand}"></Button>
+                    <Button Text="Nova Reserva" Command="{Binding NovaReservaCommand}"></Button>
                 </StackLayout>
             </Frame>
         </ContentPage>

@@ -10,13 +10,13 @@ namespace FiapEasyTicket.Models
         public string Nome { get; set; }
         public string Titulo { get; set; }
         public string Email { get; set; }
-        public decimal Preco { get; set; }
+        public string Preco { get; set; }
         public bool Confirmado { get; set; }
         public string DataFormatada
         {
             get
             {
-                return DataReserva.Add(HoraReserva).ToString("dd/MM/yyyy HH:mm");
+                return $"{DataReserva.ToString("dd/MM/yyyy")} {HoraReserva}";;
             }
         }
 
@@ -33,20 +33,21 @@ namespace FiapEasyTicket.Models
             }
         }
 
-        public TimeSpan HoraReserva { get; set; }
+        public string HoraReserva { get; set; }
 
-        public Reserva(string nome, string email, decimal preco, DateTime dataReserva, TimeSpan horaReserva)
-            : this(nome, email, preco)
+        public Reserva(string nome, string email, string preco, string titulo, DateTime dataReserva, TimeSpan horaReserva)
+            : this(nome, email, preco, titulo)
         {
             DataReserva = DataReserva;
             HoraReserva = HoraReserva;
         }
 
-        public Reserva(string nome, string email, decimal preco)
+        public Reserva(string nome, string email, string preco, string titulo)
         {
             Nome = nome;
             Email = email;
             Preco = preco;
+            Titulo = titulo;
         }
 
         public Reserva() { }

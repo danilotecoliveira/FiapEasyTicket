@@ -9,16 +9,18 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <ListView x:Name="listViewReservas" Margin="25" ItemsSource="{Binding Lista}" SelectedItem="{Binding ReservaSelecionada}">
+    <ListView x:Name="listViewReservas" Margin="25" ItemsSource="{Binding Lista}" SelectedItem="{Binding ReservaSelecionada}" RowHeight="60">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
                     <ViewCell.View>
-                        <StackLayout Orientation="Horizontal">
-                            <Label Text="{Binding DataFormatada}" FontSize="20" VerticalOptions="Center" TextColor="{Binding Confirmado, Converter={StaticResource Key=confirmadoConverter}}" />
-                            <Label Text=" - " VerticalOptions="Center" TextColor="{Binding Confirmado, Converter={StaticResource Key=confirmadoConverter}}" />
-                            <Label Text="{Binding Titulo}" FontAttributes="Bold" VerticalOptions="Center" TextColor="{Binding Confirmado, Converter={StaticResource Key=confirmadoConverter}}" />
-                            <Label Text="{Binding Confirmado}" VerticalOptions="Center" />
+                        <StackLayout>
+                            <Label Text="{Binding Titulo}" FontAttributes="Bold" FontSize="20" VerticalOptions="Center" />
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding DataFormatada}" VerticalOptions="Center" />
+                                <Label Text=" - " VerticalOptions="Center" />
+                                <Label Text="{Binding Preco}" FontSize="16" VerticalOptions="Center" />
+                            </StackLayout>
                         </StackLayout>
                     </ViewCell.View>
                 </ViewCell>

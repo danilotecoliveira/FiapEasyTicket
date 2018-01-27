@@ -30,7 +30,7 @@ namespace FiapEasyTicket.Views
                     if (reenviar)
                     {
                         ReservaService service = new ReservaService();
-                        await service.EnviarReserva(reserva);
+                        service.EnviarReserva(reserva);
                         _viewModel.AtualizarLista();
                     }
                 }
