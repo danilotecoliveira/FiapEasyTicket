@@ -6,7 +6,8 @@
         public const int _arCondicionado = 1000;
         public const int _mp3 = 500;
 
-        public string Nome { get; set; }
+        public string Cartaz { get; set; }
+        public string Titulo { get; set; }
         public decimal Preco { get; set; }
         public string PrecoFormatado
         {

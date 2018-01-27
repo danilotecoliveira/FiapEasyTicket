@@ -15,9 +15,9 @@ namespace FiapEasyTicket.ViewModels
         public Reserva Reserva { get; set; }
         public ICommand ComandoAgendar { get; set; }
 
-        public ReservaViewModel(Filme veiculo, Usuario usuario)
+        public ReservaViewModel(Filme filme, Usuario usuario)
         {
-            Reserva = new Reserva(usuario.Nome, usuario.Telefone, usuario.Email, veiculo.Nome, veiculo.Preco);
+            Reserva = new Reserva(usuario.Nome, usuario.Telefone, usuario.Email, filme.Titulo, filme.Preco);
             ComandoAgendar = new Command(() =>
             {
                 MessagingCenter.Send(Reserva, "Reserva");

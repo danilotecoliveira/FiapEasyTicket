@@ -5,15 +5,24 @@
     <ContentPage.Content>
         <StackLayout Margin="25">
             <ActivityIndicator IsRunning="{Binding Aguarde}}" IsVisible="{Binding Aguarde}}"></ActivityIndicator>
-            <ListView x:Name="listViewFilmes" ItemsSource="{Binding Filmes}" SelectedItem="{Binding FilmeSelecionado}">
+            <ListView x:Name="listViewFilmes" ItemsSource="{Binding Filmes}" SelectedItem="{Binding FilmeSelecionado}" RowHeight="120">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.View>
                                 <StackLayout Orientation="Horizontal">
-                                    <Label Text="{Binding Nome}" FontSize="20" VerticalTextAlignment="Center"></Label>
-                                    <Label Text=" - " VerticalTextAlignment="Center"></Label>
-                                    <Label Text="{Binding PrecoFormatado}" FontAttributes="Bold" VerticalTextAlignment="Center"></Label>
+                                    <Image Source="{Binding Cartaz}"></Image>
+                                    <StackLayout>
+                                        <Label Text="{Binding Titulo}" FontSize="20" VerticalTextAlignment="Center"></Label>
+
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Ingresso: " FontAttributes="Bold" VerticalTextAlignment="Center"></Label>
+                                            <Label Text="{Binding PrecoFormatado}" VerticalTextAlignment="Center"></Label>
+                                        </StackLayout>
+
+                                        <Label Text="Horários" FontAttributes="Bold" FontSize="14"></Label>
+                                        <Label Text="12:00  -  15:30  -  17:00  -  19:40  -  21:30"></Label>
+                                    </StackLayout>
                                 </StackLayout>
                             </ViewCell.View>
                         </ViewCell>

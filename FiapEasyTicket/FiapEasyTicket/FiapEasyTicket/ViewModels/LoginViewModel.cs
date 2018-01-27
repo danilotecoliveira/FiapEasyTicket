@@ -6,7 +6,7 @@ namespace FiapEasyTicket.ViewModels
 {
     public class LoginViewModel
     {
-        private string usuario = "joao@alura.com.br";
+        private string usuario = "aluno@fiap.com.br";
         public string Usuario
         {
             get { return usuario; }
@@ -17,7 +17,7 @@ namespace FiapEasyTicket.ViewModels
             }
         }
 
-        private string senha = "alura123";
+        private string senha = "fiap123";
         public string Senha
         {
             get { return senha; }
