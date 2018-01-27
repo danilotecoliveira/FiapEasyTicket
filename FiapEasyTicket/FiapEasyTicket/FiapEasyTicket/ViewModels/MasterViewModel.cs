@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using Xamarin.Forms;
 using System.Windows.Input;
+using FiapEasyTicket.Media;
 using FiapEasyTicket.Models;
 
 namespace FiapEasyTicket.ViewModels

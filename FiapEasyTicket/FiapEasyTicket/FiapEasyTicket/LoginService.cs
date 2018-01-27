@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using System.Net.Http;
 using Newtonsoft.Json;
+using FiapEasyTicket.Models;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 

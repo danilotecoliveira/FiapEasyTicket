@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Windows.Input;
 using FiapEasyTicket.Models;
 using System.Threading.Tasks;
+using FiapEasyTicket.Data;
 
 namespace FiapEasyTicket.ViewModels
 {
@@ -29,7 +30,6 @@ namespace FiapEasyTicket.ViewModels
             });
         }
 
-
         private string Modelo;
         public string modelo
         {
@@ -44,8 +44,6 @@ namespace FiapEasyTicket.ViewModels
             get { return Reserva.Preco; }
             set { Reserva.Preco = value; }
         }
-
-
 
         public string Nome
         {
@@ -113,14 +111,14 @@ namespace FiapEasyTicket.ViewModels
             }
         }
 
-        public async void SalvarAgendamento()
+        public async void SalvarReserva()
         {
             ReservaService servico = new ReservaService();
             await servico.EnviarAgendamento(Reserva);
         }
     }
 
-    public class AgendamentoService
+    public class ReservaService
     {
         const string URL_POST_AGENDAMENTO = "https://aluracar.herokuapp.com/salvaragendamento";
 

@@ -1,4 +1,6 @@
 ﻿using Xamarin.Forms;
+using FiapEasyTicket.Views;
+using FiapEasyTicket.Models;
 
 namespace FiapEasyTicket
 {

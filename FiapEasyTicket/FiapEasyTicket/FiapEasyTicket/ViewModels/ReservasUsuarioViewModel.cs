@@ -1,6 +1,8 @@
 ﻿using Xamarin.Forms;
 using FiapEasyTicket.Models;
 using System.Collections.ObjectModel;
+using FiapEasyTicket.Data;
+using System.Linq;
 
 namespace FiapEasyTicket.ViewModels
 {
