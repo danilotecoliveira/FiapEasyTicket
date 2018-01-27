@@ -21,13 +21,13 @@ namespace FiapEasyTicket.Views
         {
             base.OnAppearing();
 
-            MessagingCenter.Subscribe<Usuario>(this, "MeusAgendamentos", (usuario) =>
+            MessagingCenter.Subscribe<Usuario>(this, "MinhasReservas", (usuario) =>
             {
                 Detail = new NavigationPage(new ReservasUsuarioView());
                 IsPresented = false;
             });
 
-            MessagingCenter.Subscribe<Usuario>(this, "NovoAgendamentos", (usuario) =>
+            MessagingCenter.Subscribe<Usuario>(this, "NovaReserva", (usuario) =>
             {
                 Detail = new NavigationPage(new ListagemView(usuario));
                 IsPresented = false;
@@ -38,8 +38,8 @@ namespace FiapEasyTicket.Views
         {
             base.OnDisappearing();
 
-            MessagingCenter.Unsubscribe<Usuario>(this, "MeusAgendamentos");
-            MessagingCenter.Unsubscribe<Usuario>(this, "NovoAgendamentos");
+            MessagingCenter.Unsubscribe<Usuario>(this, "MinhasReservas");
+            MessagingCenter.Unsubscribe<Usuario>(this, "NovaReserva");
         }
     }
 }

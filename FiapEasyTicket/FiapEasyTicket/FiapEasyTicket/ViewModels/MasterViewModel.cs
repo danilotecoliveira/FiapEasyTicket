@@ -12,8 +12,8 @@ namespace FiapEasyTicket.ViewModels
         public ICommand SalvarCommand { get; private set; }
         public ICommand EditarCommand { get; private set; }
         public ICommand TirarFotoCommand { get; private set; }
-        public ICommand MeusAgendamentosCommand { get; private set; }
-        public ICommand NovoAgendamentosCommand { get; private set; }
+        public ICommand MinhasReservasCommand { get; private set; }
+        public ICommand NovaReservaCommand { get; private set; }
 
         public string Nome
         {
@@ -93,14 +93,14 @@ namespace FiapEasyTicket.ViewModels
                 FotoPerfil = ImageSource.FromStream(() => new MemoryStream(bytes));
             });
 
-            MeusAgendamentosCommand = new Command(() =>
+            MinhasReservasCommand = new Command(() =>
             {
-                MessagingCenter.Send(usuario, "MeusAgendamentos");
+                MessagingCenter.Send(usuario, "MinhasReservas");
             });
 
-            NovoAgendamentosCommand = new Command(() =>
+            NovaReservaCommand = new Command(() =>
             {
-                MessagingCenter.Send(usuario, "NovoAgendamentos");
+                MessagingCenter.Send(usuario, "NovaReserva");
             });
         }
     }

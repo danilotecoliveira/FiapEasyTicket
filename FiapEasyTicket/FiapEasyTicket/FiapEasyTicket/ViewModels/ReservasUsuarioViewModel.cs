@@ -8,16 +8,16 @@ namespace FiapEasyTicket.ViewModels
 {
     public class ReservasUsuarioViewModel : BaseViewModel
     {
-        private Reserva agendamentoSelecionado;
-        public Reserva AgendamentoSelecionado
+        private Reserva reservaSelecionado;
+        public Reserva ReservaSelecionada
         {
-            get { return agendamentoSelecionado; }
+            get { return reservaSelecionado; }
             set
             {
                 if (value != null)
                 {
-                    agendamentoSelecionado = value;
-                    MessagingCenter.Send(agendamentoSelecionado, "AgendamentoSelecionado");
+                    reservaSelecionado = value;
+                    MessagingCenter.Send(reservaSelecionado, "ReservaSelecionada");
                 }
             }
         }
@@ -50,8 +50,8 @@ namespace FiapEasyTicket.ViewModels
                 var listaDB = dao.Lista;
 
                 var query = listaDB
-                    .OrderBy(m => m.DataAgendamento)
-                    .ThenBy(m => m.HoraAgendamento);
+                    .OrderBy(m => m.DataReserva)
+                    .ThenBy(m => m.HoraReserva);
 
                 Lista.Clear();
                 foreach (var item in query)

@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <StackLayout Margin="25">
             <ActivityIndicator IsRunning="{Binding Aguarde}}" IsVisible="{Binding Aguarde}}"></ActivityIndicator>
-            <ListView x:Name="listViewVeiculos" ItemsSource="{Binding Veiculos}" SelectedItem="{Binding VeiculoSelecionado}">
+            <ListView x:Name="listViewFilmes" ItemsSource="{Binding Filmes}" SelectedItem="{Binding FilmeSelecionado}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

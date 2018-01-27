@@ -17,30 +17,30 @@ namespace FiapEasyTicket.Models
         {
             get
             {
-                return DataAgendamento.Add(HoraAgendamento).ToString("dd/MM/yyyy HH:mm");
+                return DataReserva.Add(HoraReserva).ToString("dd/MM/yyyy HH:mm");
             }
         }
 
-        DateTime dataAgendamento = DateTime.Today;
-        public DateTime DataAgendamento
+        DateTime dataReserva = DateTime.Today;
+        public DateTime DataReserva
         {
             get
             {
-                return dataAgendamento;
+                return dataReserva;
             }
             set
             {
-                dataAgendamento = value;
+                dataReserva = value;
             }
         }
 
-        public TimeSpan HoraAgendamento { get; set; }
+        public TimeSpan HoraReserva { get; set; }
 
-        public Reserva(string nome, string fone, string email, string modelo, decimal preco, DateTime dataAgendamento, TimeSpan horaAgendamento)
+        public Reserva(string nome, string fone, string email, string modelo, decimal preco, DateTime dataReserva, TimeSpan horaReserva)
             : this(nome, fone, email, modelo, preco)
         {
-            DataAgendamento = DataAgendamento;
-            HoraAgendamento = HoraAgendamento;
+            DataReserva = DataReserva;
+            HoraReserva = HoraReserva;
         }
 
         public Reserva(string nome, string fone, string email, string modelo, decimal preco)

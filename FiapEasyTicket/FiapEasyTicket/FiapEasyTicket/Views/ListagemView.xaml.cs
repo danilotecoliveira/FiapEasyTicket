@@ -22,20 +22,20 @@ namespace FiapEasyTicket.Views
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            MessagingCenter.Subscribe<Filme>(this, "VeiculoSelecionado",
+            MessagingCenter.Subscribe<Filme>(this, "FilmeSelecionado",
                 (veiculo) =>
                 {
                     Navigation.PushAsync(new DetalheView(veiculo, Usuario));
                 }
             );
 
-            await ViewModel.GetVeiculos();
+            await ViewModel.GetFilmes();
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            MessagingCenter.Unsubscribe<Filme>(this, "VeiculoSelecionado");
+            MessagingCenter.Unsubscribe<Filme>(this, "FilmeSelecionado");
         }
     }
 }

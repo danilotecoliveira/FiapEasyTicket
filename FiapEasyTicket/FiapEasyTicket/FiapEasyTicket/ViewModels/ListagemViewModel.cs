@@ -25,7 +25,7 @@ namespace FiapEasyTicket.ViewModels
 
         private Filme veiculoSelecionado;
 
-        public Filme VeiculoSelecionado
+        public Filme FilmeSelecionado
         {
             get { return veiculoSelecionado; }
             set
@@ -33,7 +33,7 @@ namespace FiapEasyTicket.ViewModels
                 veiculoSelecionado = value;
 
                 if (value != null)
-                    MessagingCenter.Send(veiculoSelecionado, "VeiculoSelecionado");
+                    MessagingCenter.Send(veiculoSelecionado, "FilmeSelecionado");
             }
         }
 
@@ -42,7 +42,7 @@ namespace FiapEasyTicket.ViewModels
             Filmes = new ObservableCollection<Filme>();
         }
 
-        public async Task GetVeiculos()
+        public async Task GetFilmes()
         {
             Aguarde = true;
             HttpClient client = new HttpClient();

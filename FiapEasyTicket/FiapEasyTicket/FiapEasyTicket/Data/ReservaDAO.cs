@@ -15,12 +15,12 @@ namespace FiapEasyTicket.Data
             _conexao.CreateTable<Reserva>();
         }
 
-        public void Salvar(Reserva agendamento)
+        public void Salvar(Reserva reserva)
         {
-            if (_conexao.Find<Reserva>(agendamento.ID) == null)
-                _conexao.Insert(agendamento);
+            if (_conexao.Find<Reserva>(reserva.ID) == null)
+                _conexao.Insert(reserva);
             else
-                _conexao.Update(agendamento);
+                _conexao.Update(reserva);
         }
 
         private List<Reserva> lista;

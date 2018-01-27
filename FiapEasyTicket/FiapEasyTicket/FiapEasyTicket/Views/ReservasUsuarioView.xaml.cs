@@ -21,27 +21,27 @@ namespace FiapEasyTicket.Views
         {
             base.OnAppearing();
 
-            MessagingCenter.Subscribe<Reserva>(this, "AgendamentoSelecionado", async (agendamento) =>
+            MessagingCenter.Subscribe<Reserva>(this, "ReservaSelecionada", async (reserva) =>
             {
-                if (!agendamento.Confirmado)
+                if (!reserva.Confirmado)
                 {
-                    var reenviar = await DisplayAlert("Reenviar", "Deseja reenviar os dados do agendamento?", "Sim", "Não");
+                    var reenviar = await DisplayAlert("Reenviar", "Deseja reenviar os dados da reserva?", "Sim", "Não");
 
                     if (reenviar)
                     {
                         ReservaService service = new ReservaService();
-                        await service.EnviarAgendamento(agendamento);
+                        await service.EnviarReserva(reserva);
                         _viewModel.AtualizarLista();
                     }
                 }
             });
 
-            MessagingCenter.Subscribe<Reserva>(this, "SucessoAgendamento", async (agendamento) => {
+            MessagingCenter.Subscribe<Reserva>(this, "SucessoReserva", async (reserva) => {
                 await DisplayAlert("Reenviar", "Reenvio com sucesso!", "Ok");
             });
 
-            MessagingCenter.Subscribe<Reserva>(this, "FalhaAgendamento", async (agendamento) => {
-                await DisplayAlert("Reenviar", "Falha ao sucesso!", "Ok");
+            MessagingCenter.Subscribe<Reserva>(this, "FalhaReserva", async (reserva) => {
+                await DisplayAlert("Reenviar", "Falha ao reenvivar!", "Ok");
             });
         }
 
@@ -49,9 +49,9 @@ namespace FiapEasyTicket.Views
         {
             base.OnDisappearing();
 
-            MessagingCenter.Unsubscribe<Reserva>(this, "AgendamentoSelecionado");
-            MessagingCenter.Unsubscribe<Reserva>(this, "SucessoAgendamento");
-            MessagingCenter.Unsubscribe<Reserva>(this, "FalhaAgendamento");
+            MessagingCenter.Unsubscribe<Reserva>(this, "ReservaSelecionada");
+            MessagingCenter.Unsubscribe<Reserva>(this, "SucessoReserva");
+            MessagingCenter.Unsubscribe<Reserva>(this, "FalhaReserva");
         }
     }
 }

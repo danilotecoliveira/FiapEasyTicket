@@ -6,7 +6,7 @@ namespace FiapEasyTicket.ViewModels
 {
     public class DetalheViewModel : BaseViewModel
     {
-        public Filme Veiculo { get; set; }
+        public Filme Filme { get; set; }
         public ICommand ProximoComando { get; set; }
 
         public string FreioABS
@@ -37,11 +37,11 @@ namespace FiapEasyTicket.ViewModels
         {
             get
             {
-                return Veiculo.TemFreioAbs;
+                return Filme.TemFreioAbs;
             }
             set
             {
-                Veiculo.TemFreioAbs = value;
+                Filme.TemFreioAbs = value;
                 OnPropertyChanged();
                 OnPropertyChanged(nameof(ValorTotal));
             }
@@ -51,11 +51,11 @@ namespace FiapEasyTicket.ViewModels
         {
             get
             {
-                return Veiculo.TemArCondicionado;
+                return Filme.TemArCondicionado;
             }
             set
             {
-                Veiculo.TemArCondicionado = value;
+                Filme.TemArCondicionado = value;
                 OnPropertyChanged();
                 OnPropertyChanged(nameof(ValorTotal));
             }
@@ -65,11 +65,11 @@ namespace FiapEasyTicket.ViewModels
         {
             get
             {
-                return Veiculo.TemMP3Player;
+                return Filme.TemMP3Player;
             }
             set
             {
-                Veiculo.TemMP3Player = value;
+                Filme.TemMP3Player = value;
                 OnPropertyChanged();
                 OnPropertyChanged(nameof(ValorTotal));
             }
@@ -79,13 +79,13 @@ namespace FiapEasyTicket.ViewModels
         {
             get
             {
-                return Veiculo.PrecoTotalFormatado;
+                return Filme.PrecoTotalFormatado;
             }
         }
 
         public DetalheViewModel(Filme veiculo)
         {
-            Veiculo = veiculo;
+            Filme = veiculo;
             ProximoComando = new Command(() =>
             {
                 MessagingCenter.Send(veiculo, "Proximo");

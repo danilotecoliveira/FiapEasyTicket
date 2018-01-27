@@ -20,7 +20,7 @@ namespace FiapEasyTicket.ViewModels
             Reserva = new Reserva(usuario.Nome, usuario.Telefone, usuario.Email, veiculo.Nome, veiculo.Preco);
             ComandoAgendar = new Command(() =>
             {
-                MessagingCenter.Send(Reserva, "Agendamento");
+                MessagingCenter.Send(Reserva, "Reserva");
             }, () =>
             {
                 return
@@ -30,14 +30,12 @@ namespace FiapEasyTicket.ViewModels
             });
         }
 
-        private string Modelo;
+        
         public string modelo
         {
             get { return Reserva.Nome; }
             set { Reserva.Nome = value; }
         }
-
-        private decimal Preco;
 
         public decimal MyProperty
         {
@@ -87,81 +85,81 @@ namespace FiapEasyTicket.ViewModels
             }
         }
 
-        public DateTime DataAgendamento
+        public DateTime DataReserva
         {
             get
             {
-                return Reserva.DataAgendamento;
+                return Reserva.DataReserva;
             }
             set
             {
-                Reserva.DataAgendamento = value;
+                Reserva.DataReserva = value;
             }
         }
 
-        public TimeSpan HoraAgendamento
+        public TimeSpan HoraReserva
         {
             get
             {
-                return Reserva.HoraAgendamento;
+                return Reserva.HoraReserva;
             }
             set
             {
-                Reserva.HoraAgendamento = value;
+                Reserva.HoraReserva = value;
             }
         }
 
         public async void SalvarReserva()
         {
             ReservaService servico = new ReservaService();
-            await servico.EnviarAgendamento(Reserva);
+            await servico.EnviarReserva(Reserva);
         }
     }
 
     public class ReservaService
     {
-        const string URL_POST_AGENDAMENTO = "https://aluracar.herokuapp.com/salvaragendamento";
+        const string URL_POST_AGENDAMENTO = "https://aluracar.herokuapp.com/salvarreserva";
 
-        public async Task EnviarAgendamento(Reserva agendamento)
+        public async Task EnviarReserva(Reserva reserva)
         {
             var client = new HttpClient();
 
             var json = JsonConvert.SerializeObject(new
             {
-                nome = agendamento.Nome,
-                fone = agendamento.Fone,
-                email = agendamento.Email,
-                carro = agendamento.Modelo,
-                preco = agendamento.Preco,
-                dataAgendamento =
+                nome = reserva.Nome,
+                fone = reserva.Fone,
+                email = reserva.Email,
+                carro = reserva.Modelo,
+                preco = reserva.Preco,
+                dataReserva =
                 new DateTime(
-                    agendamento.DataAgendamento.Year,
-                    agendamento.DataAgendamento.Month,
-                    agendamento.DataAgendamento.Day,
-                    agendamento.HoraAgendamento.Hours,
-                    agendamento.HoraAgendamento.Minutes,
-                    agendamento.HoraAgendamento.Seconds
+                    reserva.DataReserva.Year,
+                    reserva.DataReserva.Month,
+                    reserva.DataReserva.Day,
+                    reserva.HoraReserva.Hours,
+                    reserva.HoraReserva.Minutes,
+                    reserva.HoraReserva.Seconds
                 )
             });
 
             var conteudo = new StringContent(json, Encoding.UTF8, "application/json");
             var resposta = await client.PostAsync(URL_POST_AGENDAMENTO, conteudo);
-            agendamento.Confirmado = resposta.IsSuccessStatusCode;
+            reserva.Confirmado = resposta.IsSuccessStatusCode;
 
-            SalvarAgendamentoDB(agendamento);
+            SalvarReservaDB(reserva);
 
-            if (agendamento.Confirmado)
-                MessagingCenter.Send(agendamento, "SucessoAgendamento");
+            if (reserva.Confirmado)
+                MessagingCenter.Send(reserva, "SucessoReserva");
             else
-                MessagingCenter.Send(new ArgumentException(), "FalhaAgendamento");
+                MessagingCenter.Send(new ArgumentException(), "FalhaReserva");
         }
 
-        public void SalvarAgendamentoDB(Reserva agendamento)
+        public void SalvarReservaDB(Reserva reserva)
         {
             using (var conexao = DependencyService.Get<ISQLite>().PegarConexao())
             {
                 var dao = new ReservaDAO(conexao);
-                dao.Salvar(agendamento);
+                dao.Salvar(reserva);
             }
         }
     }

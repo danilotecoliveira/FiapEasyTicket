@@ -8,13 +8,13 @@ namespace FiapEasyTicket.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class DetalheView : ContentPage
 	{
-        public Filme Veiculo { get; set; }
+        public Filme Filme { get; set; }
         public Usuario Usuario { get; set; }
 
         public DetalheView(Filme veiculo, Usuario usuario)
         {
             InitializeComponent();
-            Veiculo = veiculo;
+            Filme = veiculo;
             Usuario = usuario;
             BindingContext = new DetalheViewModel(veiculo);
         }

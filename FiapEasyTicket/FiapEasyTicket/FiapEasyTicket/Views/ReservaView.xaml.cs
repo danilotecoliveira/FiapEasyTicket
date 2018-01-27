@@ -22,11 +22,11 @@ namespace FiapEasyTicket.Views
         {
             base.OnAppearing();
 
-            MessagingCenter.Subscribe<Reserva>(this, "Agendamento",
+            MessagingCenter.Subscribe<Reserva>(this, "Reserva",
                 async (msg) =>
                 {
-                    var confirma = await DisplayAlert("Salvar Agendamento",
-                    "Deseja mesmo enviar o agendamento?",
+                    var confirma = await DisplayAlert("Salvar Reserva",
+                    "Deseja mesmo enviar a reserva?",
                     "sim", "não");
 
                     if (confirma)
@@ -35,15 +35,15 @@ namespace FiapEasyTicket.Views
                     }
                 });
 
-            MessagingCenter.Subscribe<Reserva>(this, "SucessoAgendamento", async (msg) =>
+            MessagingCenter.Subscribe<Reserva>(this, "SucessoReserva", async (msg) =>
             {
-                await DisplayAlert("Agendamento", "Agendamento salvo com sucesso!", "Ok");
+                await DisplayAlert("Reserva", "Reserva salvo com sucesso!", "Ok");
                 await Navigation.PopToRootAsync();
             });
 
-            MessagingCenter.Subscribe<ArgumentException>(this, "FalhaAgendamento", async (msg) =>
+            MessagingCenter.Subscribe<ArgumentException>(this, "FalhaReserva", async (msg) =>
             {
-                await DisplayAlert("Agendamento", "Erro ao fazer o agendamento!", "Ok");
+                await DisplayAlert("Reserva", "Erro ao fazer a reserva!", "Ok");
                 await Navigation.PopToRootAsync();
             });
         }
@@ -52,9 +52,9 @@ namespace FiapEasyTicket.Views
         {
             base.OnDisappearing();
 
-            MessagingCenter.Unsubscribe<Reserva>(this, "Agendamento");
-            MessagingCenter.Unsubscribe<Reserva>(this, "SucessoAgendamento");
-            MessagingCenter.Unsubscribe<ArgumentException>(this, "FalhaAgendamento");
+            MessagingCenter.Unsubscribe<Reserva>(this, "Reserva");
+            MessagingCenter.Unsubscribe<Reserva>(this, "SucessoReserva");
+            MessagingCenter.Unsubscribe<ArgumentException>(this, "FalhaReserva");
         }
     }
 }
