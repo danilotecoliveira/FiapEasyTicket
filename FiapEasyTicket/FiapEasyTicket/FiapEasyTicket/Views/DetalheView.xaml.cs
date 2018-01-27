@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using FiapEasyTicket.Models;
+using FiapEasyTicket.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,7 +11,7 @@ namespace FiapEasyTicket.Views
         public Filme Veiculo { get; set; }
         public Usuario Usuario { get; set; }
 
-        public DetalheView(Veiculo veiculo, Usuario usuario)
+        public DetalheView(Filme veiculo, Usuario usuario)
         {
             InitializeComponent();
             Veiculo = veiculo;
@@ -27,9 +23,9 @@ namespace FiapEasyTicket.Views
         {
             base.OnAppearing();
 
-            MessagingCenter.Subscribe<Veiculo>(this, "Proximo", (veiculo) =>
+            MessagingCenter.Subscribe<Filme>(this, "Proximo", (veiculo) =>
             {
-                Navigation.PushAsync(new AgendamentoView(veiculo, Usuario));
+                Navigation.PushAsync(new ReservaView(veiculo, Usuario));
             });
         }
 
@@ -37,7 +33,7 @@ namespace FiapEasyTicket.Views
         {
             base.OnDisappearing();
 
-            MessagingCenter.Unsubscribe<Veiculo>(this, "Proximo");
+            MessagingCenter.Unsubscribe<Filme>(this, "Proximo");
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Globalization;
 
 namespace FiapEasyTicket.Converters
 {
-    class ReservaConfirmadaConverter : IValueConverter
+    public class ReservaConfirmadaConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

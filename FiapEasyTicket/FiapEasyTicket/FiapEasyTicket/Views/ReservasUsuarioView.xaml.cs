@@ -49,9 +49,9 @@ namespace FiapEasyTicket.Views
         {
             base.OnDisappearing();
 
-            MessagingCenter.Unsubscribe<Agendamento>(this, "AgendamentoSelecionado");
-            MessagingCenter.Unsubscribe<Agendamento>(this, "SucessoAgendamento");
-            MessagingCenter.Unsubscribe<Agendamento>(this, "FalhaAgendamento");
+            MessagingCenter.Unsubscribe<Reserva>(this, "AgendamentoSelecionado");
+            MessagingCenter.Unsubscribe<Reserva>(this, "SucessoAgendamento");
+            MessagingCenter.Unsubscribe<Reserva>(this, "FalhaAgendamento");
         }
     }
 }
