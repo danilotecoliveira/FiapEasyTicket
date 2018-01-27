@@ -17,7 +17,7 @@
                         <StackLayout Orientation="Horizontal">
                             <Label Text="{Binding DataFormatada}" FontSize="20" VerticalOptions="Center" TextColor="{Binding Confirmado, Converter={StaticResource Key=confirmadoConverter}}" />
                             <Label Text=" - " VerticalOptions="Center" TextColor="{Binding Confirmado, Converter={StaticResource Key=confirmadoConverter}}" />
-                            <Label Text="{Binding Modelo}" FontAttributes="Bold" VerticalOptions="Center" TextColor="{Binding Confirmado, Converter={StaticResource Key=confirmadoConverter}}" />
+                            <Label Text="{Binding Titulo}" FontAttributes="Bold" VerticalOptions="Center" TextColor="{Binding Confirmado, Converter={StaticResource Key=confirmadoConverter}}" />
                             <Label Text="{Binding Confirmado}" VerticalOptions="Center" />
                         </StackLayout>
                     </ViewCell.View>

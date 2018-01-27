@@ -2,14 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FiapEasyTicket.Views.ReservaView"
-             Title="{Binding Filme.Nome}">
+             Title="{Binding Reserva.Titulo}">
     <ContentPage.Content>
         <StackLayout>
             <TableView>
                 <TableRoot>
                     <TableSection Title="Seus Dados">
                         <EntryCell Label="Nome:" Text="{Binding Nome}"></EntryCell>
-                        <EntryCell Label="Fone:" Keyboard="Telephone" Text="{Binding Fone}"></EntryCell>
                         <EntryCell Label="E-mail:" Keyboard="Email" Text="{Binding Email}"></EntryCell>
                     </TableSection>
                     <TableSection Title="Reserva">
@@ -22,7 +21,18 @@
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" Margin="15,0,0,0">
                                 <Label Text="Hora:" Margin="0,10,0,0"></Label>
-                                <TimePicker Time="{Binding HoraReserva}"></TimePicker>
+                                <Picker SelectedItem="{Binding HoraReserva}" WidthRequest="60">
+                                    <Picker.ItemsSource>
+                                        <x:Array Type="{x:Type x:String}">
+                                            <x:String>12:00</x:String>
+                                            <x:String>12:00</x:String>
+                                            <x:String>15:30</x:String>
+                                            <x:String>17:00</x:String>
+                                            <x:String>19:40</x:String>
+                                            <x:String>21:30</x:String>
+                                        </x:Array>
+                                    </Picker.ItemsSource>
+                                </Picker>
                             </StackLayout>
                         </ViewCell>
                     </TableSection>

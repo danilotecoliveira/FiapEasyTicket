@@ -10,7 +10,10 @@ namespace FiapEasyTicket
         public async Task FazerLogin(Login login)
         {
             if (login.Email == "aluno@fiap.com.br" && login.Senha == "fiap123")
-                MessagingCenter.Send(new Usuario(), "SucessoLogin");
+            {
+                var usuaro = new Usuario { Nome = "Aluno Fiap", Email = "aluno@fiap.com.br" };
+                MessagingCenter.Send(usuaro, "SucessoLogin");
+            }
             else
                 MessagingCenter.Send(new LoginException("Credencial incorreta"), "FalhaLogin");
         }

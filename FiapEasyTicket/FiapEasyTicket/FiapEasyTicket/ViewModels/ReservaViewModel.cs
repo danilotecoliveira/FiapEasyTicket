@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Text;
 using Xamarin.Forms;
-using Newtonsoft.Json;
-using System.Net.Http;
+using FiapEasyTicket.Data;
 using System.Windows.Input;
 using FiapEasyTicket.Models;
 using System.Threading.Tasks;
-using FiapEasyTicket.Data;
 
 namespace FiapEasyTicket.ViewModels
 {
@@ -17,7 +14,7 @@ namespace FiapEasyTicket.ViewModels
 
         public ReservaViewModel(Filme filme, Usuario usuario)
         {
-            Reserva = new Reserva(usuario.Nome, usuario.Telefone, usuario.Email, filme.Titulo, filme.Preco);
+            Reserva = new Reserva(usuario.Nome, usuario.Email, filme.Preco);
             ComandoAgendar = new Command(() =>
             {
                 MessagingCenter.Send(Reserva, "Reserva");
@@ -25,7 +22,6 @@ namespace FiapEasyTicket.ViewModels
             {
                 return
                 !string.IsNullOrWhiteSpace(Nome) &&
-                !string.IsNullOrWhiteSpace(Fone) &&
                 !string.IsNullOrWhiteSpace(Email);
             });
         }
@@ -37,7 +33,7 @@ namespace FiapEasyTicket.ViewModels
             set { Reserva.Nome = value; }
         }
 
-        public decimal MyProperty
+        public decimal Preco
         {
             get { return Reserva.Preco; }
             set { Reserva.Preco = value; }
@@ -52,20 +48,6 @@ namespace FiapEasyTicket.ViewModels
             set
             {
                 Reserva.Nome = value;
-                OnPropertyChanged();
-                ((Command)ComandoAgendar).ChangeCanExecute();
-            }
-        }
-
-        public string Fone
-        {
-            get
-            {
-                return Reserva.Fone;
-            }
-            set
-            {
-                Reserva.Fone = value;
                 OnPropertyChanged();
                 ((Command)ComandoAgendar).ChangeCanExecute();
             }
@@ -118,35 +100,10 @@ namespace FiapEasyTicket.ViewModels
 
     public class ReservaService
     {
-        const string URL_POST_AGENDAMENTO = "https://aluracar.herokuapp.com/salvarreserva";
-
         public async Task EnviarReserva(Reserva reserva)
         {
-            var client = new HttpClient();
-
-            var json = JsonConvert.SerializeObject(new
-            {
-                nome = reserva.Nome,
-                fone = reserva.Fone,
-                email = reserva.Email,
-                carro = reserva.Modelo,
-                preco = reserva.Preco,
-                dataReserva =
-                new DateTime(
-                    reserva.DataReserva.Year,
-                    reserva.DataReserva.Month,
-                    reserva.DataReserva.Day,
-                    reserva.HoraReserva.Hours,
-                    reserva.HoraReserva.Minutes,
-                    reserva.HoraReserva.Seconds
-                )
-            });
-
-            var conteudo = new StringContent(json, Encoding.UTF8, "application/json");
-            var resposta = await client.PostAsync(URL_POST_AGENDAMENTO, conteudo);
-            reserva.Confirmado = resposta.IsSuccessStatusCode;
-
             SalvarReservaDB(reserva);
+            reserva.Confirmado = true;
 
             if (reserva.Confirmado)
                 MessagingCenter.Send(reserva, "SucessoReserva");

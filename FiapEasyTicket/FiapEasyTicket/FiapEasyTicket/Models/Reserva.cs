@@ -8,9 +8,8 @@ namespace FiapEasyTicket.Models
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
         public string Nome { get; set; }
-        public string Fone { get; set; }
+        public string Titulo { get; set; }
         public string Email { get; set; }
-        public string Modelo { get; set; }
         public decimal Preco { get; set; }
         public bool Confirmado { get; set; }
         public string DataFormatada
@@ -36,19 +35,17 @@ namespace FiapEasyTicket.Models
 
         public TimeSpan HoraReserva { get; set; }
 
-        public Reserva(string nome, string fone, string email, string modelo, decimal preco, DateTime dataReserva, TimeSpan horaReserva)
-            : this(nome, fone, email, modelo, preco)
+        public Reserva(string nome, string email, decimal preco, DateTime dataReserva, TimeSpan horaReserva)
+            : this(nome, email, preco)
         {
             DataReserva = DataReserva;
             HoraReserva = HoraReserva;
         }
 
-        public Reserva(string nome, string fone, string email, string modelo, decimal preco)
+        public Reserva(string nome, string email, decimal preco)
         {
             Nome = nome;
-            Fone = fone;
             Email = email;
-            Modelo = modelo;
             Preco = preco;
         }
 

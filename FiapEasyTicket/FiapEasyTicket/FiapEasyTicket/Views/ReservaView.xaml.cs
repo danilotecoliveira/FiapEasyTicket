@@ -11,10 +11,10 @@ namespace FiapEasyTicket.Views
 	{
         public ReservaViewModel ViewModel { get; set; }
 
-        public ReservaView(Filme veiculo, Usuario usuario)
+        public ReservaView(Filme filme, Usuario usuario)
         {
             InitializeComponent();
-            ViewModel = new ReservaViewModel(veiculo, usuario);
+            ViewModel = new ReservaViewModel(filme, usuario);
             BindingContext = ViewModel;
         }
 
