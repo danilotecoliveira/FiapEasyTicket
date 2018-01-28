@@ -135,4 +135,58 @@
       <Name>FiapEasyTicket</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bastardosinglorios.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\belezaamericana.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cassino.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\damadeferro.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\diadetrinamento.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\djangolivre.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\gladiador.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\homensdehonra.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\infiltrados.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\jogodaimitacao.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\killbill.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\labirintodofauno.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\listadeshindler.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\oitoodiados.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\senhordosaneis.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\silenciodosinicentes.jpg" />
+  </ItemGroup>
 </Project>
