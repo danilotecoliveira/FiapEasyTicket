@@ -6,7 +6,7 @@ using FiapEasyTicket.Droid;
 [assembly: Xamarin.Forms.Dependency(typeof(SQLiteAndroid))]
 namespace FiapEasyTicket.Droid
 {
-    class SQLiteAndroid : ISQLite
+    public class SQLiteAndroid : ISQLite
     {
         private const string nomeArquivoDB = "EasyTicket.db3";
 
