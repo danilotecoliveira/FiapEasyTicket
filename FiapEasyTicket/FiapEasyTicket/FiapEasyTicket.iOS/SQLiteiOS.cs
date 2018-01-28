@@ -1,10 +1,8 @@
-﻿using FiapEasyTicket.Data;
-using FiapEasyTicket.iOS;
-using SQLite;
+﻿using SQLite;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
+using FiapEasyTicket.iOS;
+using FiapEasyTicket.Data;
 
 [assembly: Xamarin.Forms.Dependency(typeof(SQLiteiOS))]
 namespace FiapEasyTicket.iOS

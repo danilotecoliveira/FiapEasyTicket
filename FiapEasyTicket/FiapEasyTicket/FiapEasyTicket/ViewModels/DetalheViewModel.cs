@@ -33,6 +33,22 @@ namespace FiapEasyTicket.ViewModels
             }
         }
 
+        public string Filme3D
+        {
+            get
+            {
+                return string.Format("Filme 3D - R$ {0}", Filme._FILME3D);
+            }
+        }
+
+        public string MeiaEntrada
+        {
+            get
+            {
+                return string.Format("Meia Entrada 3D - R$ {0}", (Filme.Preco / 2));
+            }
+        }
+
         public bool TemPipoca
         {
             get
@@ -70,6 +86,34 @@ namespace FiapEasyTicket.ViewModels
             set
             {
                 Filme.TemRefrigerante = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(ValorTotal));
+            }
+        }
+
+        public bool TemFilme3D
+        {
+            get
+            {
+                return Filme.TemFilme3D;
+            }
+            set
+            {
+                Filme.TemFilme3D = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(ValorTotal));
+            }
+        }
+
+        public bool TemMeiaEntrada
+        {
+            get
+            {
+                return Filme.TemMeiaEntrada;
+            }
+            set
+            {
+                Filme.TemMeiaEntrada = value;
                 OnPropertyChanged();
                 OnPropertyChanged(nameof(ValorTotal));
             }

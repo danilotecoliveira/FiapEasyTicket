@@ -9,8 +9,10 @@
                 <TableRoot>
                     <TableSection Title="Acompanhamentos">
                         <SwitchCell Text="{Binding Pipoca}" On="{Binding TemPipoca, Mode=TwoWay}"></SwitchCell>
-                        <SwitchCell Text="{Binding Chocolate}" On="{Binding TemChocolate, Mode=TwoWay}"></SwitchCell>
                         <SwitchCell Text="{Binding Refrigerante}" On="{Binding TemRefrigerante, Mode=TwoWay}"></SwitchCell>
+                        <SwitchCell Text="{Binding Chocolate}" On="{Binding TemChocolate, Mode=TwoWay}"></SwitchCell>
+                        <SwitchCell Text="{Binding Filme3D}" On="{Binding TemFilme3D, Mode=TwoWay}"></SwitchCell>
+                        <SwitchCell Text="{Binding MeiaEntrada}" On="{Binding TemMeiaEntrada, Mode=TwoWay}"></SwitchCell>
                         <TextCell Text="{Binding ValorTotal, Mode=TwoWay}"></TextCell>
                     </TableSection>
                 </TableRoot>
